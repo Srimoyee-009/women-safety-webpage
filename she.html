@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>She - Women Empowerment</title>
+    <link rel="stylesheet" href="she.css">
+</head>
+<body>
+    <header>
+        <div class="location-help">
+            <p>Hey there, How can we help you?</p>
+            <button class="header-button" id="location-button">Location: <span id="location">Fetching...</span></button>
+        </div>
+        <div class="sign-up">
+            <a href="#">Sign Up</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="durga-image">
+            <img src="https://png.pngtree.com/png-vector/20220922/ourmid/pngtree-maa-calligraphy-with-trishul-happy-navratri-typography-png-image_6211148.png" alt="Goddess Durga">
+        </div>
+        <div class="sos-button">
+            <button>SOS</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="section">
+            <button class="footer-button" id="chat-room">Chat Room</button>
+        </div>
+        <div class="section">
+            <button class="footer-button" id="domestic-violence">Domestic Violence</button>
+        </div>
+        <div class="section">
+            <button class="footer-button" id="surveys-articles">Surveys & Articles</button>
+        </div>
+    </footer>
+
+    <script>
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    document.getElementById('location').textContent = 
+                        `Lat: ${position.coords.latitude}, Lon: ${position.coords.longitude}`;
+                },
+                () => {
+                    document.getElementById('location').textContent = "Location unavailable";
+                }
+            );
+        } else {
+            document.getElementById('location').textContent = "Geolocation not supported";
+        }
+    </script>
+</body>
+</html>
